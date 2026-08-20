@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111111">
+<title>TOKA Pizza Bar</title>
+<style>
+:root{--ink:#111;--cream:#f7f3ea;--paper:#fffaf2;--red:#df3e2b;--muted:#716b63;--line:#dfd8cc}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:var(--ink)}
+button,input,textarea{font:inherit}.app{max-width:520px;margin:auto;min-height:100vh;padding-bottom:90px}
+.top{height:76px;position:sticky;top:0;z-index:20;background:#f7f3eaf5;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 18px}
+.logo{font-weight:950;font-size:30px;letter-spacing:5px}.logo small{display:block;color:var(--red);font-size:8px;letter-spacing:2px;text-align:center}
+.icon{border:0;background:none;font-size:24px}.hero{background:var(--ink);color:var(--cream);padding:28px 20px 0;overflow:hidden}
+.tribe{color:var(--red);text-align:center;letter-spacing:8px;font-size:12px}.hero h1{font-size:43px;line-height:1;margin:22px 0 12px}
+.hero p{color:#d8d1c5;line-height:1.6}.hero img{display:block;width:115%;margin:24px -8% -25%;aspect-ratio:1;object-fit:cover;border-radius:50%}
+.btn{width:100%;border:0;border-radius:15px;padding:16px;font-weight:900;background:var(--red);color:white}.pad{padding:18px}
+.title{display:flex;justify-content:space-between;align-items:center}.title h2{font-size:25px}
+.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:14px}.tab{white-space:nowrap;border:1px solid var(--line);border-radius:99px;padding:10px 15px;background:var(--paper)}
+.tab.on{background:var(--red);color:white;border-color:var(--red)}.products{display:grid;gap:12px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:17px;overflow:hidden}.product{display:grid;grid-template-columns:115px 1fr;gap:13px;padding:10px}
+.product img{width:115px;height:115px;object-fit:cover;border-radius:12px}.product h3{margin:4px 0 7px}.product p{margin:0;color:var(--muted);font-size:13px;line-height:1.4}
+.row{display:flex;justify-content:space-between;align-items:center}.price{font-weight:950;font-size:18px}.plus{width:38px;height:38px;border:0;border-radius:50%;background:var(--ink);color:white;font-size:23px}
+.screen{display:none}.screen.active{display:block}.detail{background:var(--ink);color:white;min-height:calc(100vh - 76px)}.detail>img{width:100%;aspect-ratio:1.1;object-fit:cover}
+.detailText{padding:20px}.detailText h1{font-size:36px;margin:12px 0 8px}.detailText p{color:#ccc;line-height:1.5}.extras{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.extra{border:1px solid #5a5148;background:#171717;color:white;border-radius:13px;padding:12px}.cartItem{padding:12px;margin-bottom:10px}
+.summary{padding:16px;margin-top:15px}.summary .row{padding:8px 0}.total{border-top:1px solid var(--line);font-size:22px;font-weight:950;margin-top:8px;padding-top:15px!important}
+.field{margin:14px 0}.field label{display:block;font-weight:800;margin-bottom:7px}.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:13px;padding:14px;background:var(--paper)}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);height:82px;background:var(--paper);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);z-index:30}
+.nav{border:0;background:none;font-size:11px;color:#625b54}.nav b{display:block;font-size:22px}.nav.on{color:var(--red)}
+.success{background:var(--ink);color:white;min-height:calc(100vh - 76px);padding:60px 24px;text-align:center}.success h1{font-size:40px}.success p{color:#ccc;font-size:18px}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><button class="icon" onclick="show('menu')">☰</button><div class="logo">TOKA<small>FEEL THE TRIBE</small></div><button class="icon" onclick="show('cart')">🛒 <small id="count">0</small></button></header>
+
+<section id="home" class="screen active">
+<div class="hero"><div class="tribe">◆ △ ◆ ▽ ◆ △ ◆</div><h1>פיצה זה<br>השבט שלנו</h1><p>פיצות עם אופי גדול, חומרי גלם טריים ואווירה של TOKA.</p><button class="btn" onclick="show('menu')">הזמן עכשיו ←</button><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=85"></div>
+<div class="pad"><div class="title"><h2>הפיצות שלנו</h2><span class="tribe">◆ △ ◆</span></div><div id="featured" class="products"></div></div>
+</section>
+
+<section id="menu" class="screen"><div class="pad"><div class="title"><h2>בחר פיצה</h2><span class="tribe">◆ △ ◆</span></div><div class="tabs"><button class="tab on">הכל</button><button class="tab">מיוחדות</button><button class="tab">צמחוניות</button><button class="tab">טבעוניות</button></div><div id="products" class="products"></div></div></section>
+
+<section id="detail" class="screen detail"><img id="dimg"><div class="detailText"><div class="tribe">◆ △ ◆ ▽ ◆</div><h1 id="dname"></h1><p id="ddesc"></p><div id="dprice" class="price"></div><h2>תוספות</h2><div id="extras" class="extras"></div><button id="add" class="btn" style="margin-top:20px"></button></div></section>
+
+<section id="cart" class="screen"><div class="pad"><div class="title"><h2>הסל שלי</h2><span class="tribe">◆ △ ◆</span></div><div id="cartItems"></div><div class="card summary"><div class="row"><span>סכום ביניים</span><b id="sub"></b></div><div class="row"><span>משלוח</span><b>₪16</b></div><div class="row total"><span>סה״כ</span><span id="grand"></span></div></div><button class="btn" style="margin-top:14px" onclick="checkout()">להמשך ←</button></div></section>
+
+<section id="checkout" class="screen"><div class="pad"><h2>פרטי הזמנה</h2><div class="field"><label>שם מלא</label><input id="customer"></div><div class="field"><label>כתובת</label><input id="address"></div><div class="field"><label>טלפון</label><input id="phone"></div><div class="field"><label>הערות</label><textarea rows="3"></textarea></div><button class="btn" onclick="finish()">שלח הזמנה 🔥</button></div></section>
+
+<section id="success" class="screen"><div class="success"><div style="font-size:60px">🔥</div><div class="tribe">◆ △ ◆ ▽ ◆</div><h1>ההזמנה התקבלה!</h1><p>אנחנו כבר מכינים אותה<br>באהבה בשבילך</p><button class="btn" onclick="reset()">חזרה לבית</button></div></section>
+</div>
+
+<nav class="bottom" id="nav"><button class="nav on" onclick="show('home')"><b>⌂</b>בית</button><button class="nav" onclick="show('menu')"><b>◒</b>תפריט</button><button class="nav" onclick="show('cart')"><b>▣</b>הזמנה</button><button class="nav" onclick="alert('בקרוב')"><b>♙</b>חשבון</button></nav>
+
+<script>
+const pizzas=[
+["DIAVOLA",84,"רוטב עגבניות, מוצרלה, פפרוני חריף ופרמזן","https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=700&q=85"],
+["4 FORMAGGI",84,"מוצרלה, גורגונזולה, ריקוטה ופרמזן","https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=85"],
+["FUNGI TARTUFO",92,"פטריות, קרם כמהין, מוצרלה ורוקט","https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=700&q=85"],
+["BIANCA",84,"שמנת, מוצרלה, שום, רוקט ופרמזן","https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=700&q=85"]];
+let cart=[],sel=null,extraCount=0;
+function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");nav.style.display=id==="success"?"none":"grid";if(id==="cart")renderCart();scrollTo(0,0)}
+function draw(){products.innerHTML=pizzas.map((p,i)=>`<div class="card product" onclick="openPizza(${i})"><img src="${p[3]}"><div><h3>${p[0]}</h3><p>${p[2]}</p><div class="row" style="margin-top:12px"><span class="price">₪${p[1]}</span><button class="plus">+</button></div></div></div>`).join("");featured.innerHTML=products.innerHTML}
+function openPizza(i){sel=pizzas[i];extraCount=0;dimg.src=sel[3];dname.textContent=sel[0];ddesc.textContent=sel[2];dprice.textContent="₪"+sel[1];extras.innerHTML=["בצל סגול","חלפיניו","פטריות","צ׳ילי","זיתים","רוקט"].map(x=>`<button class="extra" onclick="this.style.borderColor='#df3e2b';extraCount++;updateAdd()">${x}<br><small>+₪6</small></button>`).join("");updateAdd();show("detail")}
+function updateAdd(){add.textContent=`₪${sel[1]+extraCount*6} | הוסף לסל`;add.onclick=()=>{cart.push({name:sel[0],price:sel[1]+extraCount*6});count.textContent=cart.length;show("cart")}}
+function renderCart(){cartItems.innerHTML=cart.length?cart.map((x,i)=>`<div class="card cartItem"><div class="row"><div><b>${x.name}</b><div style="color:#716b63;margin-top:6px">פיצה TOKA</div></div><div><b>₪${x.price}</b> <button onclick="cart.splice(${i},1);count.textContent=cart.length;renderCart()">✕</button></div></div></div>`).join(""):"<p style='text-align:center;padding:50px;color:#716b63'>הסל עדיין ריק 🍕</p>";let s=cart.reduce((a,x)=>a+x.price,0);sub.textContent="₪"+s;grand.textContent="₪"+(s+(s?16:0))}
+function checkout(){let s=cart.reduce((a,x)=>a+x.price,0);if(s<72)return alert("מינימום להזמנה הוא ₪72");show("checkout")}
+function finish(){if(!customer.value||!address.value||!phone.value)return alert("נא למלא שם, כתובת וטלפון");show("success")}
+function reset(){cart=[];count.textContent=0;nav.style.display="grid";show("home")}
+draw();
+</script>
+</body></html>
