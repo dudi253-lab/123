@@ -1,0 +1,568 @@
+Upgrade the EXISTING TOKA pizza ordering application.
+
+IMPORTANT:
+This is NOT a new application.
+Do not rebuild the project from scratch.
+Do not remove or break existing functionality, routing, cart logic, product configuration, delivery/pickup flow, pricing logic, or mobile behavior.
+
+The goal is to redesign the existing application using the following TOKA visual identity.
+
+LANGUAGE & LAYOUT
+- Hebrew only
+- Full RTL layout
+- Mobile-first
+- Optimized primarily for iPhone/mobile ordering
+- Keep Hebrew text natural and readable
+- Prices use ₪
+- Large touch targets
+- Fast, simple ordering experience
+
+================================
+TOKA BRAND DIRECTION
+================================
+
+TOKA is NOT a traditional Italian pizzeria brand.
+
+The identity should feel:
+- tribal
+- urban
+- youthful
+- contemporary
+- slightly raw
+- bold
+- warm
+- playful
+- independent
+
+Avoid:
+- Italian flags
+- red/green Italian clichés
+- rustic Tuscany aesthetics
+- vintage Italian restaurant styling
+- excessive wood textures
+- generic pizza-app appearance
+
+Core concept:
+"FEEL IT, YOU ARE PART OF THE TRIBE"
+
+The tribal identity should be noticeable but controlled.
+
+Use tribal graphics as:
+- thin separators
+- bottom borders
+- small symbols near headings
+- packaging-inspired decorative strips
+- subtle background patterns
+- micro details
+
+Do NOT cover the UI with tribal decoration.
+
+The interface itself must remain clean and modern.
+
+================================
+COLOR SYSTEM
+================================
+
+Primary Black:
+#111111
+
+Warm Cream:
+#F7F6F2
+
+TOKA Terracotta Red:
+#E94835
+
+Tribal Green:
+#2E7D32
+
+Warm Sand:
+#D4A373
+
+Secondary surfaces:
+#FFFFFF
+#EFECE5
+
+Text:
+Primary #111111
+Secondary #68645E
+On dark surfaces #F7F6F2
+
+Red is the primary action color.
+
+Use black for premium/brand-heavy sections.
+
+Cream should dominate the ordering interface.
+
+================================
+TYPOGRAPHY
+================================
+
+Hebrew body/interface:
+Use a modern highly readable Hebrew sans-serif.
+
+Preferred:
+Heebo / Assistant / Rubik
+
+Headlines:
+Heavy, condensed, bold feeling.
+
+Use large typography sparingly.
+
+Product names can use uppercase Latin typography where appropriate:
+DIAVOLA
+BIANCA
+FUNGI TARTUFO
+4 FORMAGGI
+
+Hebrew descriptions remain RTL.
+
+================================
+SHAPE LANGUAGE
+================================
+
+Cards:
+border-radius: 16-20px
+
+Buttons:
+border-radius: 14-16px
+
+Product images:
+border-radius: 12-16px
+
+Pills/chips:
+fully rounded or 12-14px radius
+
+Borders:
+thin, subtle warm-gray borders.
+
+Avoid excessive shadows.
+
+Prefer:
+clean borders
+layered surfaces
+contrast
+spacing
+
+instead of heavy shadows.
+
+================================
+PHOTOGRAPHY
+================================
+
+Use the REAL TOKA pizza/product photographs provided with the project.
+
+Do not replace them with generated pizza images.
+
+Photography is a major part of the visual identity.
+
+Pizza photographs should:
+- be large
+- look delicious
+- maintain their original colors
+- use strong cropping
+- not have excessive filters
+
+Dark photography can be used against black surfaces.
+
+================================
+BOTTOM NAVIGATION
+================================
+
+Create a fixed mobile bottom navigation.
+
+RTL order:
+
+בית
+תפריט
+הזמנות
+חשבון
+
+Use simple outline icons.
+
+Active:
+TOKA red.
+
+Inactive:
+black/gray.
+
+Navigation background:
+warm cream.
+
+================================
+HOME SCREEN
+================================
+
+Create a strong TOKA opening screen.
+
+Top:
+hamburger/menu
+TOKA logo
+cart icon with quantity badge
+
+Hero section:
+dark/black background.
+
+TOKA logo prominently displayed.
+
+Headline:
+"פיצה זה השבט שלנו"
+
+Supporting copy:
+"פיצות על אש אמיתית,
+מחומרים טריים ואהבה גדולה."
+
+Primary CTA:
+"הזמן עכשיו"
+
+TOKA red button.
+
+Include a large real pizza photograph integrated into the hero.
+
+Below hero:
+
+"הפיצות שלנו"
+
+Show 3 featured pizza cards.
+
+Each card:
+pizza image
+name
+price
+
+Example:
+DIAVOLA — ₪84
+4 FORMAGGI — ₪84
+FUNGI TARTUFO — ₪92
+
+Add a subtle TOKA tribal separator.
+
+================================
+MENU SCREEN
+================================
+
+Header:
+"בחר פיצה"
+
+Category chips:
+
+הכל
+מיוחדות
+צמחוניות
+טבעוניות
+
+Active category:
+TOKA red background
+cream text.
+
+Products appear as clean vertical cards.
+
+Each product:
+large square pizza image
+product name
+short Hebrew description
+price
+circular + button
+
+Example:
+
+DIAVOLA
+רוטב עגבניות, מוצרלה,
+ספייסי פפרוני, פרמזן
+
+₪84
+
+Keep scrolling extremely clean.
+
+================================
+PRODUCT SCREEN
+================================
+
+Large hero photograph at top.
+
+Dark background around hero/product information.
+
+Product name:
+large typography.
+
+Example:
+DIAVOLA
+
+Description below.
+
+Price:
+₪84
+
+Section:
+"תוספות"
+
+Display toppings as selectable cards/chips.
+
+Each contains:
+name
+additional price
++ button
+
+Examples:
+בצל סגול +₪6
+חלפיניו +₪6
+פטריות +₪6
+צ'ילי חריף +₪6
+זיתי קלמטה +₪6
+רוקט +₪6
+
+Sticky bottom CTA:
+
+"הוסף לסל"
+
+Show total price inside button.
+
+Example:
+₪96 | הוסף לסל
+
+================================
+CART
+================================
+
+Title:
+"הסל שלי"
+
+Cream background.
+
+Each item:
+thumbnail
+product name
+price
+quantity controls
+delete icon
+
+Use large +/- controls suitable for one-handed mobile use.
+
+Summary:
+
+סכום ביניים
+משלוח
+סה"כ לתשלום
+
+Current delivery price:
+₪16
+
+Primary CTA:
+"להמשך התשלום"
+
+================================
+CHECKOUT
+================================
+
+Title:
+"פרטי הזמנה"
+
+Delivery time selector using 15-minute slots.
+
+Example:
+
+18:00–18:15
+18:15–18:30
+18:30–18:45
+19:00–19:15
+
+Selected slot:
+TOKA red.
+
+Delivery address card.
+
+Customer information.
+
+Order notes.
+
+Payment method.
+
+Large final CTA:
+
+"שלם עכשיו"
+
+Show total next to CTA.
+
+================================
+ORDER SUCCESS
+================================
+
+Use a dramatic TOKA dark screen.
+
+Black background.
+
+TOKA tribal graphics subtly visible in background.
+
+TOKA fire/tribal icon.
+
+Large headline:
+
+"ההזמנה התקבלה!"
+
+Supporting copy:
+
+"אנחנו כבר מכינים אותה
+באהבה בשבילך"
+
+Display:
+
+מספר הזמנה
+זמן אספקה משוער
+כתובת
+
+Buttons:
+
+"עקוב אחרי ההזמנה"
+
+"החזרה לדף הבית"
+
+================================
+MICRO INTERACTIONS
+================================
+
+Add subtle modern interactions:
+
+- button press feedback
+- smooth cart counter animation
+- category chip transitions
+- subtle card press scale
+- smooth page transitions
+- add-to-cart confirmation
+- skeleton loading states
+
+Animations must be fast.
+
+150-250ms.
+
+Do not create flashy animations.
+
+================================
+TRIBAL DESIGN SYSTEM
+================================
+
+Create a reusable TribalDivider component.
+
+The pattern should be inspired by TOKA packaging:
+
+geometric triangles
+small diamonds
+fire-like shapes
+hand-drawn geometric rhythm
+
+Colors:
+terracotta
+black
+sand
+
+Use it only in strategic locations.
+
+Create reusable:
+
+TribalDivider
+TokaButton
+TokaCard
+PizzaCard
+CategoryChip
+QuantitySelector
+PriceSummary
+BottomNavigation
+ProductHero
+TokaHeader
+
+================================
+IMPORTANT FUNCTIONAL RULES
+================================
+
+Preserve the existing business rules.
+
+Pizza base price:
+₪84 unless the existing product specifies otherwise.
+
+Delivery:
+₪16.
+
+Minimum order:
+₪72.
+
+Delivery/pickup selection must continue working.
+
+Time slots:
+15-minute increments.
+
+Keep existing cart state.
+
+Keep existing product/topping selection.
+
+Keep existing checkout flow.
+
+Keep existing routing.
+
+Do not introduce authentication unless already implemented.
+
+Do not change the application's backend architecture.
+
+================================
+RESPONSIVENESS
+================================
+
+Primary design target:
+390px-430px mobile width.
+
+It must also work on:
+small phones
+large phones
+tablets
+desktop
+
+On desktop:
+center the application content
+use sensible max-widths
+do not simply stretch the mobile layout across the screen.
+
+================================
+IMPLEMENTATION RULE
+================================
+
+First inspect the existing project structure and components.
+
+Then refactor the visual layer systematically.
+
+Reuse existing functionality wherever possible.
+
+Do not duplicate components unnecessarily.
+
+Create centralized design tokens for:
+
+colors
+spacing
+radius
+typography
+borders
+animation timing
+
+Do not leave placeholder content.
+
+Do not use generated food images when real TOKA assets exist.
+
+Do not change working application logic just to achieve the redesign.
+
+Final result should look like a real production-ready branded TOKA ordering app rather than a generic template.
+
+The attached design mockup is the VISUAL REFERENCE.
+
+Follow its overall visual language, hierarchy, colors, dark/cream contrast and tribal details, but adapt it intelligently to the actual existing application and its functionality.
+
+Before finishing:
+1. Verify all screens are RTL.
+2. Verify navigation works.
+3. Verify adding/removing products works.
+4. Verify quantities update totals.
+5. Verify toppings update price.
+6. Verify ₪16 delivery is calculated correctly.
+7. Verify ₪72 minimum order.
+8. Verify checkout works.
+9. Verify 15-minute time slots.
+10. Verify there are no broken routes.
+11. Verify mobile layout at 390px width.
+12. Verify no horizontal overflow.
+13. Verify all buttons have comfortable touch targets.
+14. Verify real TOKA images are used.
